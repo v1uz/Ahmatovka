@@ -57,7 +57,7 @@ const AccommodationPage = () => {
           <h1 className="text-3xl md:text-4xl font-bold mb-6">Проживание</h1>
           <div className="flex items-center justify-between">
             <p className="text-gray-600 max-w-3xl">
-              В отеле Cosmos Collection Izumrudny Les представлены различные варианты размещения: от уютных номеров до просторных вилл. Каждый тип проживания оснащен всем необходимым для комфортного отдыха.
+              В отеле AHMATOVKA представлены различные варианты размещения: от уютных номеров до просторных вилл. Каждый тип проживания оснащен всем необходимым для комфортного отдыха.
             </p>
           </div>
         </div>
@@ -132,7 +132,7 @@ const AccommodationPage = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Забронировать номер</h2>
             <p className="text-gray-600 mb-8">
-              Выберите идеальный вариант размещения для вашего отдыха в Cosmos Collection Izumrudny Les и погрузитесь в атмосферу природного комфорта.
+              Выберите идеальный вариант размещения для вашего отдыха в AHMATOVKA и погрузитесь в атмосферу природного комфорта.
             </p>
             <Link 
               to="/booking" 

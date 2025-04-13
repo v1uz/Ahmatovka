@@ -76,7 +76,7 @@ const Footer = () => {
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-gray-500 mr-2 flex-shrink-0" />
                 <a href="mailto:reservations.izl@cosmoscollection.ru" className="hover:text-gray-900">
-                  reservations.izl@cosmoscollection.ru
+                  ---
                 </a>
               </li>
             </ul>
@@ -95,7 +95,7 @@ const Footer = () => {
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-gray-500 mr-2 flex-shrink-0" />
                 <a href="mailto:sales.izmr@cosmoscollection.ru" className="hover:text-gray-900">
-                  sales.izmr@cosmoscollection.ru
+                  ---
                 </a>
               </li>
             </ul>
@@ -112,7 +112,7 @@ const Footer = () => {
         
         {/* Copyright */}
         <div className="border-t border-gray-200 pt-8 text-center text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} Cosmos Collection Izumrudny Les Hotel. Все права защищены.</p>
+          <p>© {new Date().getFullYear()} AHMATOVKA. Все права защищены.</p>
           <div className="flex justify-center mt-4 space-x-4">
             <Link to="/privacy-policy" className="hover:text-gray-700">Политика конфиденциальности</Link>
             <Link to="/terms" className="hover:text-gray-700">Условия использования</Link>

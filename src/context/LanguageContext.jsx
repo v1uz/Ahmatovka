@@ -33,7 +33,7 @@ const translations = {
     homepage: {
       hero: {
         subtitle: 'Официальный сайт отеля',
-        title: 'COSMOS COLLECTION IZUMRUDNY LES',
+        title: 'AHMATOVKA',
         description: 'Насладитесь природой в условиях истинного комфорта'
       },
       offers: {
@@ -89,7 +89,7 @@ const translations = {
     homepage: {
       hero: {
         subtitle: 'Official Hotel Website',
-        title: 'COSMOS COLLECTION IZUMRUDNY LES',
+        title: 'AHMATOVKA',
         description: 'Enjoy nature in true comfort'
       },
       offers: {

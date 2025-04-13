@@ -47,7 +47,7 @@ const EventsPage = () => {
     <div className="container mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-6">Афиша</h1>
       <p className="text-gray-600 mb-8">
-        Мероприятия и события, которые пройдут в отеле Cosmos Collection Izumrudny Les в ближайшее время.
+        Мероприятия и события, которые пройдут в отеле AHMATOVKA в ближайшее время.
       </p>
       
       <div className="space-y-8 mb-12">

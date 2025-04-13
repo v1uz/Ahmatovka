@@ -18,6 +18,9 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
     },
   },
+  css: {
+    postcss: './postcss.config.js',
+  },
   server: {
     port: 3000,
     open: true,

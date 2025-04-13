@@ -8,8 +8,6 @@ import RoomCard from '../components/home/RoomCard';
 import OfferCard from '../components/home/OfferCard';
 
 const HomePage = () => {
-  // No language context needed for now
-  // Mock data for rooms
   const accommodationTypes = [
     {
       id: 1,
@@ -37,55 +35,54 @@ const HomePage = () => {
     }
   ];
   
-  // Mock data for offers
   const offers = [
     {
       id: 1,
-      title: 'Подарочный сертификат в Cosmos Collection Izumrudny Les Hotel',
+      title: 'Подарочный сертификат в AHMATOVKA',
       image: '/api/placeholder/400/320',
       link: '/offers/gift-certificate'
     },
     {
       id: 2,
-      title: 'Длинные выходные в Cosmos Collection Izumrudny Les Hotel',
+      title: 'Длинные выходные в AHMATOVKA',
       image: '/api/placeholder/400/320',
       link: '/offers/long-weekend'
     }
   ];
   
-  // Mock data for features
   const features = [
     {
       id: 1,
       icon: '/api/placeholder/64/64',
-      title: 'Вертолетная площадка',
-      description: 'На территории отеля к Вашим услугам вертолетная площадка',
-      buttonText: 'Вертолетная площадка',
+      title: 'Чистая родниковая вода',
+      description: 'Ахматовка - это чистая родниковая вода, которая проходит через 7 фильтров',
+      buttonText: 'Чистая родниковая вода',
       buttonLink: '/features/helicopter'
     },
     {
       id: 2,
       icon: '/api/placeholder/64/64',
-      title: 'Удобное расположение',
-      description: 'Наши отели расположены в лучших локациях России',
-      buttonText: 'Удобное расположение',
+      title: 'Падел корты',
+      description: 'Падел корты - это уникальная возможность для активного отдыха',
+      buttonText: 'Падел корты',
       buttonLink: '/features/location'
     },
     {
       id: 3,
       icon: '/api/placeholder/64/64',
-      title: 'Wi-Fi',
-      description: 'На территории всех отелей предоставляется Wi-Fi',
-      buttonText: 'Wi-Fi',
-      buttonLink: '/features/wifi'
+      title: 'Традиционные русские бани',
+      description: 'Традионные русские бани - это уникальная возможность для активного отдыха',
+      buttonText: 'Традиционные русские бани',
+      buttonLink: '/features/offers'
     },
     {
+
       id: 4,
       icon: '/api/placeholder/64/64',
-      title: 'Уникальные спецпредложения',
-      description: 'Мы предлагаем Вам разнообразные акции и предложения для лучшего отдыха',
-      buttonText: 'Уникальные спецпредложения',
-      buttonLink: '/features/offers'
+      title: 'Wi-Fi',
+      description: 'На территории отеля предоставляется Wi-Fi',
+      buttonText: 'Wi-Fi',
+      buttonLink: '/features/wifi'
     }
   ];
 
@@ -94,18 +91,28 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="relative h-[600px]">
         <div className="absolute inset-0">
-          <img 
-            src="/api/placeholder/1200/600" 
-            alt="Cosmos Collection Izumrudny Les Hotel" 
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover"
-          />
+        >
+        <source src="/videos/hotel-hero.mp4" type="video/mp4" />
+        {/* Fallback image if video cannot load */}
+        <img 
+          src="https://placehold.co/1200x600" 
+          alt="AHMATOVKA Hotel" 
+          className="w-full h-full object-cover"
+        />
+          </video>
           <div className="absolute inset-0 bg-black opacity-30" />
         </div>
         
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
           <div className="max-w-3xl">
             <p className="text-sm uppercase tracking-widest text-white mb-2">
-              Cosmos Collection Izumrudny Les
+              Ahmatovka
             </p>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Насладитесь природой в условиях истинного комфорта
@@ -256,14 +263,14 @@ const HomePage = () => {
             <div className="md:w-1/2">
               <img 
                 src="/api/placeholder/600/400" 
-                alt="Cosmos Collection Izumrudny Les Hotel" 
+                alt="AHMATOVKA Hotel" 
                 className="w-full h-[400px] object-cover rounded-lg"
               />
             </div>
             <div className="md:w-1/2">
               <h2 className="text-3xl font-bold mb-6">О нас</h2>
               <p className="text-gray-700 mb-6">
-                Cosmos Collection Izumrudny Les - современный пятизвёздочный отель, окруженный бескрайним лесом. В живописном уголке Московской области, вдали от городской суеты, каждый гость может ощутить идеальное сочетание комфорта и природы.
+                AHMATOVKA - современный пятизвёздочный отель, окруженный бескрайним лесом. В живописном уголке Московской области, вдали от городской суеты, каждый гость может ощутить идеальное сочетание комфорта и природы.
               </p>
               <p className="text-gray-700 mb-6">
                 На территории отеля расположено 137 номеров различных категорий, начиная от уютных студио и заканчивая роскошными виллами.

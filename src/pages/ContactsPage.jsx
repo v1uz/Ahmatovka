@@ -1,60 +1,42 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail } from 'lucide-react';
+// In ContactsPage.jsx
+import React, { useEffect, useRef } from 'react';
 
-const ContactsPage = () => {
+export const ContactsPage = () => {
+  const mapRef = useRef(null);
+  
+  useEffect(() => {
+    // Create script dynamically to ensure it loads in the right order
+    const script = document.createElement('script');
+    script.src = "https://api-maps.yandex.ru/2.1/?apikey=55f1f93d-0af8-42f3-af5d-27a36a30ef42&lang=ru_RU";
+    script.async = true;
+    script.onload = initMap;
+    document.head.appendChild(script);
+    
+    function initMap() {
+      if (window.ymaps) {
+        window.ymaps.ready(() => {
+          // Check if component is still mounted
+          if (mapRef.current) {
+            new window.ymaps.Map(mapRef.current, {
+              center: [53.3015, 45.9678],
+              zoom: 14,
+              controls: ['zoomControl', 'fullscreenControl']
+            });
+          }
+        });
+      }
+    }
+    
+    return () => {
+      // Clean up script if component unmounts before script loads
+      document.head.removeChild(script);
+    };
+  }, []);
+  
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-6">Контакты</h1>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <div>
-          <h2 className="text-xl font-bold mb-4">Информационный центр</h2>
-          <ul className="space-y-4 text-gray-600">
-            <li className="flex items-start">
-              <MapPin className="h-5 w-5 text-gray-500 mr-2 mt-0.5 flex-shrink-0" />
-              <span>Россия, Московская область, городской округ Клин, сельское поселение Нудольское, вблизи п. Нарынка, вл. "Изумрудный лес".</span>
-            </li>
-            <li className="flex items-center">
-              <Phone className="h-5 w-5 text-gray-500 mr-2 flex-shrink-0" />
-              <a href="tel:+74951084034" className="hover:text-gray-900">
-                +7 (495) 108-40-34
-              </a>
-            </li>
-          </ul>
-        </div>
-        
-        <div>
-          <h2 className="text-xl font-bold mb-4">Отдел бронирования</h2>
-          <ul className="space-y-4 text-gray-600">
-            <li className="flex items-center">
-              <Phone className="h-5 w-5 text-gray-500 mr-2 flex-shrink-0" />
-              <a href="tel:+74954020201" className="hover:text-gray-900">
-                +7 495 402 02 01
-              </a>
-            </li>
-            <li className="flex items-center">
-              <Mail className="h-5 w-5 text-gray-500 mr-2 flex-shrink-0" />
-              <a href="mailto:reservations.izl@cosmoscollection.ru" className="hover:text-gray-900">
-                reservations.izl@cosmoscollection.ru
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-      <div className="mb-12">
-        <h2 className="text-xl font-bold mb-4">Как добраться</h2>
-        <div className="bg-gray-100 p-4 rounded">
-          <p className="text-gray-600 mb-2">Карта будет добавлена позже</p>
-        </div>
-      </div>
-      
-      <Link to="/" className="text-primary-DEFAULT hover:text-primary-dark">
-        Вернуться на главную
-      </Link>
+    <div>
+      {/* Your contact information here */}
+      <div ref={mapRef} style={{ width: '100%', height: '400px', borderRadius: '0.5rem' }}></div>
     </div>
   );
 };
-
-export default ContactsPage;

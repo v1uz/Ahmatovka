@@ -16,9 +16,8 @@ const Header = ({ toggleDarkMode, darkMode }) => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <div className="flex flex-col">
-              <div className="text-xl font-bold tracking-wide uppercase">COSMOS</div>
-              <div className="text-sm tracking-wider uppercase">COLLECTION</div>
-              <div className="text-xs tracking-wider uppercase">IZUMRUDNY LES HOTEL</div>
+              <div className="text-xl font-bold tracking-wide uppercase">AHMATOVKA</div>
+              <div className="text-xs tracking-wider uppercase">Лучший отель</div>
             </div>
           </Link>
           
