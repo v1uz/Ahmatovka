@@ -8,7 +8,7 @@ const RestaurantsPage = () => {
       <p className="text-gray-600 mb-8">
         Информация о ресторанах будет добавлена в ближайшее время.
       </p>
-      <Link to="/" className="text-primary-DEFAULT hover:text-primary-dark">
+      <Link to="/" className="text-primary hover:text-primary-dark">
         Вернуться на главную
       </Link>
     </div>

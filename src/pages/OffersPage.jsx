@@ -54,7 +54,7 @@ const OffersPage = () => {
               <p className="text-gray-600 mb-4">{offer.description}</p>
               <Link 
                 to={offer.link}
-                className="inline-block bg-primary-DEFAULT hover:bg-primary-dark text-white py-2 px-4 rounded transition"
+                className="inline-block bg-primary hover:bg-primary-dark text-white py-2 px-4 rounded transition"
               >
                 Подробнее
               </Link>
@@ -63,7 +63,7 @@ const OffersPage = () => {
         ))}
       </div>
       
-      <Link to="/" className="text-primary-DEFAULT hover:text-primary-dark">
+      <Link to="/" className="text-primary hover:text-primary-dark">
         Вернуться на главную
       </Link>
     </div>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
@@ -12,25 +13,25 @@ const HomePage = () => {
     {
       id: 1,
       title: 'Номера гостиницы Crystal',
-      image: '/api/placeholder/400/320',
+      image: '/images/accommodations/crystal.jpg',
       link: '/accommodation/crystal',
     },
     {
       id: 2,
       title: 'Номера Дуплекс',
-      image: '/api/placeholder/400/320',
+      image: '/images/accommodations/duplex.jpg',
       link: '/accommodation/duplex',
     },
     {
       id: 3,
       title: 'Коттеджи',
-      image: '/api/placeholder/400/320',
+      image: '/images/accommodations/cottages.jpg',
       link: '/accommodation/cottages',
     },
     {
       id: 4,
       title: 'Виллы',
-      image: '/api/placeholder/400/320',
+      image: '/images/accommodations/villas.jpg',
       link: '/accommodation/villas',
     }
   ];
@@ -39,13 +40,13 @@ const HomePage = () => {
     {
       id: 1,
       title: 'Подарочный сертификат в AHMATOVKA',
-      image: '/api/placeholder/400/320',
+      image: '/images/offers/gift-certificate.jpg',
       link: '/offers/gift-certificate'
     },
     {
       id: 2,
       title: 'Длинные выходные в AHMATOVKA',
-      image: '/api/placeholder/400/320',
+      image: '/images/offers/long-weekend.jpg',
       link: '/offers/long-weekend'
     }
   ];
@@ -53,43 +54,69 @@ const HomePage = () => {
   const features = [
     {
       id: 1,
-      icon: '/api/placeholder/64/64',
+      icon: '/images/features/water-icon.svg',
       title: 'Чистая родниковая вода',
       description: 'Ахматовка - это чистая родниковая вода, которая проходит через 7 фильтров',
-      buttonText: 'Чистая родниковая вода',
-      buttonLink: '/features/helicopter'
+      buttonText: 'Подробнее',
+      buttonLink: '/features/spring-water'
     },
     {
       id: 2,
-      icon: '/api/placeholder/64/64',
+      icon: '/images/features/paddle-icon.svg',
       title: 'Падел корты',
       description: 'Падел корты - это уникальная возможность для активного отдыха',
-      buttonText: 'Падел корты',
-      buttonLink: '/features/location'
+      buttonText: 'Подробнее',
+      buttonLink: '/features/paddle-courts'
     },
     {
       id: 3,
-      icon: '/api/placeholder/64/64',
+      icon: '/images/features/sauna-icon.svg',
       title: 'Традиционные русские бани',
       description: 'Традионные русские бани - это уникальная возможность для активного отдыха',
-      buttonText: 'Традиционные русские бани',
-      buttonLink: '/features/offers'
+      buttonText: 'Подробнее',
+      buttonLink: '/features/russian-saunas'
     },
     {
-
       id: 4,
-      icon: '/api/placeholder/64/64',
+      icon: '/images/features/wifi-icon.svg',
       title: 'Wi-Fi',
-      description: 'На территории отеля предоставляется Wi-Fi',
-      buttonText: 'Wi-Fi',
+      description: 'На территории отеля предоставляется высокоскоростной Wi-Fi',
+      buttonText: 'Подробнее',
       buttonLink: '/features/wifi'
+    }
+  ];
+  
+  const restaurants = [
+    {
+      id: 1,
+      title: 'Ресторан Ахматовка',
+      image: '/images/restaurants/restaurant1.jpg',
+      link: '/restaurants/ahmatovka',
+    },
+    {
+      id: 2,
+      title: 'Ресторан Лесной',
+      image: '/images/restaurants/restaurant2.jpg',
+      link: '/restaurants/forest',
+    },
+    {
+      id: 3,
+      title: 'Ресторан Река',
+      image: '/images/restaurants/restaurant3.jpg',
+      link: '/restaurants/river',
+    },
+    {
+      id: 4,
+      title: 'Ресторан Сад',
+      image: '/images/restaurants/restaurant4.jpg',
+      link: '/restaurants/garden',
     }
   ];
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[600px]">
+      <section className="relative h-screen max-h-[700px]">
         <div className="absolute inset-0">
           <video
             autoPlay
@@ -97,14 +124,14 @@ const HomePage = () => {
             muted
             playsInline
             className="w-full h-full object-cover"
-        >
-        <source src="/videos/hotel-hero.mp4" type="video/mp4" />
-        {/* Fallback image if video cannot load */}
-        <img 
-          src="https://placehold.co/1200x600" 
-          alt="AHMATOVKA Hotel" 
-          className="w-full h-full object-cover"
-        />
+          >
+            <source src="/videos/hotel-hero.mp4" type="video/mp4" />
+            {/* Fallback image if video cannot load */}
+            <img 
+              src="/images/hero-fallback.jpg" 
+              alt="AHMATOVKA Hotel" 
+              className="w-full h-full object-cover"
+            />
           </video>
           <div className="absolute inset-0 bg-black opacity-30" />
         </div>
@@ -114,7 +141,7 @@ const HomePage = () => {
             <p className="text-sm uppercase tracking-widest text-white mb-2">
               Ahmatovka
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Насладитесь природой в условиях истинного комфорта
             </h1>
           </div>
@@ -211,16 +238,14 @@ const HomePage = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {/* Mock restaurant cards - In a real implementation, these would come from your data */}
-            {[1, 2, 3, 4].map(id => (
-              <div key={id} className="rounded-lg overflow-hidden shadow-sm">
-                <img 
-                  src={`/api/placeholder/300/200`} 
-                  alt={`Restaurant ${id}`} 
-                  className="w-full h-48 object-cover"
-                />
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {restaurants.map(restaurant => (
+              <RestaurantCard
+                key={restaurant.id}
+                title={restaurant.title}
+                image={restaurant.image}
+                link={restaurant.link}
+              />
             ))}
           </div>
         </div>
@@ -262,7 +287,7 @@ const HomePage = () => {
           <div className="flex flex-col md:flex-row gap-8">
             <div className="md:w-1/2">
               <img 
-                src="/api/placeholder/600/400" 
+                src="/images/about/hotel-exterior.jpg" 
                 alt="AHMATOVKA Hotel" 
                 className="w-full h-[400px] object-cover rounded-lg"
               />
@@ -278,6 +303,9 @@ const HomePage = () => {
               <p className="text-gray-700 mb-6">
                 Отель продумал весь досуг для того, чтобы все гости в полной мере смогли расслабиться и отдохнуть. На территории в 220 га расположены: 7 ресторанов с авторской, европейской, итальянской и русской кухней, винный погреб, велнес&спа с бассейном, бани, спортивный комплекс с термальной зоной, тренажёрным залом и бассейном, торговая галерея, конгресс-холл с кинотеатром и бильярдной комнатой, сафари-парк, конноспортивный клуб, прокат, детский клуб, детские площадки и панда-парк.
               </p>
+              <Link to="/about" className="inline-flex items-center text-indigo-600 hover:text-indigo-700">
+                Узнать больше <ChevronRight className="h-4 w-4 ml-1" />
+              </Link>
             </div>
           </div>
         </div>

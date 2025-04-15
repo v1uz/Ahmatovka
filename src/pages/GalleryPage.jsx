@@ -21,7 +21,7 @@ const GalleryPage = () => {
         ))}
       </div>
       
-      <Link to="/" className="text-primary-DEFAULT hover:text-primary-dark">
+      <Link to="/" className="text-primary hover:text-primary-dark">
         Вернуться на главную
       </Link>
     </div>

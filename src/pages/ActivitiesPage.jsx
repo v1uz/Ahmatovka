@@ -8,7 +8,7 @@ const ActivitiesPage = () => {
       <p className="text-gray-600 mb-8">
         На этой странице будет представлена информация о мероприятиях отеля. Страница находится в разработке.
       </p>
-      <Link to="/" className="text-primary-DEFAULT hover:text-primary-dark">
+      <Link to="/" className="text-primary hover:text-primary-dark">
         Вернуться на главную
       </Link>
     </div>
