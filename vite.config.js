@@ -7,7 +7,6 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
@@ -17,6 +16,10 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, './src/pages'),
       '@assets': path.resolve(__dirname, './src/assets'),
     },
+  },
+  // Add TypeScript configuration
+  typescript: {
+    tsconfig: './tsconfig.json'
   },
   css: {
     postcss: './postcss.config.js',

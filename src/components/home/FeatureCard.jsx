@@ -15,7 +15,7 @@ const FeatureCard = ({ icon, title, description, buttonText, buttonLink }) => {
       {buttonText && buttonLink && (
         <a
           href={buttonLink}
-          className="mt-auto text-[#a08b7b] hover:text-[#8a7667] font-medium text-sm transition duration-200"
+          className="mt-auto text-primary font-medium text-sm transition duration-200"
         >
           {buttonText}
         </a>

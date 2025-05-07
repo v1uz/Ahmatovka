@@ -9,22 +9,22 @@ const BookingForm = () => {
   const [showCalendar, setShowCalendar] = useState(false);
   const [hasPromocode, setHasPromocode] = useState(false);
   const [promocode, setPromocode] = useState('');
-  
+
   // Add these functions to use the state setters
   const handleCheckInChange = (date) => {
     setCheckIn(date);
     setShowCalendar(false);
   };
-  
+
   const handleCheckOutChange = (date) => {
     setCheckOut(date);
     setShowCalendar(false);
   };
-  
+
   const handleGuestsChange = (newGuests) => {
     setGuests(newGuests);
   };
-  
+
   const toggleCalendar = () => {
     setShowCalendar(!showCalendar);
   };
@@ -47,7 +47,7 @@ const BookingForm = () => {
             </div>
           </div>
         </div>
-        
+
         <div>
           <div className="relative">
             <input
@@ -62,7 +62,7 @@ const BookingForm = () => {
             </div>
           </div>
         </div>
-        
+
         <div>
           <div className="relative">
             <select
@@ -84,24 +84,24 @@ const BookingForm = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Calendar component (simplified) */}
       {showCalendar && (
         <div className="mt-4 p-4 border border-gray-200 rounded-lg bg-white shadow">
           <div className="flex justify-between mb-4">
-            <button 
+            <button
               className="text-sm text-gray-500"
               onClick={() => handleCheckInChange('11.04.2025')}
             >
               11.04.2025
             </button>
-            <button 
+            <button
               className="text-sm text-gray-500"
               onClick={() => handleCheckOutChange('12.04.2025')}
             >
               12.04.2025
             </button>
-            <button 
+            <button
               className="text-sm text-gray-500"
               onClick={() => setShowCalendar(false)}
             >
@@ -111,7 +111,7 @@ const BookingForm = () => {
           <p className="text-xs text-gray-400 text-center">Это упрощенный календарь. В реальном проекте здесь будет полноценный календарь для выбора дат.</p>
         </div>
       )}
-      
+
       <div className="mt-4 flex items-center">
         <input
           type="checkbox"
@@ -124,7 +124,7 @@ const BookingForm = () => {
           У меня есть промокод или карта лояльности
         </label>
       </div>
-      
+
       {hasPromocode && (
         <div className="mt-4">
           <input
@@ -136,9 +136,9 @@ const BookingForm = () => {
           />
         </div>
       )}
-      
+
       <div className="mt-6">
-        <button className="w-full bg-[#a08b7b] hover:bg-[#8a7667] text-white py-3 px-6 rounded font-medium transition duration-200">
+        <button className="w-full bg-primary text-white py-3 px-6 rounded font-medium transition duration-200">
           Забронировать
         </button>
       </div>
